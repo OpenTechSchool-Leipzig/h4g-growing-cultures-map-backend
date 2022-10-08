@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "pFLAzTT+JRtwXkijEstaAP9gp+zESoDaI1JyLCrnNwW4ZXgT6XepmJ1xnwvkLx5tOYYUXSSJ15bz8+ACeVV0bQ==",
+  "dgSpecHash": "rNF+cczRQ33OqXKwkuzSlfUK3vJJY8vMHk8mFH8vb6RR75vVe/xQWuMQX7HIGQ1rWx00Rha4vtYb3yfMkCkJOg==",
   "success": true,
   "projectFilePath": "C:\\Projects\\CSharp\\hack4good\\hack4good.Web\\hack4good.Web.csproj",
   "expectedPackageFiles": [
@@ -32,6 +32,7 @@
     "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\npgsql\\6.0.7\\npgsql.6.0.7.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\6.0.7\\npgsql.entityframeworkcore.postgresql.6.0.7.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\swashbuckle.aspnetcore.annotations\\6.4.0\\swashbuckle.aspnetcore.annotations.6.4.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512",

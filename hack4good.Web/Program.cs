@@ -13,12 +13,15 @@ builder.Services.AddControllers().AddNewtonsoftJson(options =>
     options.SerializerSettings.Configure();
 });
 builder.Services.AddSwaggerGen(options =>
+{
+    options.EnableAnnotations();
     options.SwaggerDoc("v1", new OpenApiInfo
     {
         Version = "v1",
         Title = "hack4good API",
         Description = "hack4good API"
-    }));
+    });
+});
 
 builder.Services.AddDb(builder.Configuration);
 builder.Services.AddBLL();
@@ -30,7 +33,14 @@ await app.Services.MigrateDb();
 
 if (!builder.Environment.IsProduction())
 {
-    app.UseSwagger();
+    app.UseSwagger(options =>
+    {
+        options.RouteTemplate = "swagger/{documentName}/swagger.json";
+        options.PreSerializeFilters.Add((swaggerDoc, httpReq) => swaggerDoc.Servers = new List<OpenApiServer>
+        {
+            new() { Url = $"https://{httpReq.Host.Value}/api" }
+        });
+    });
     app.UseSwaggerUI();
 }
 

@@ -3,6 +3,7 @@ using hack4good.BLL.AccountArea.CreateAccount;
 using hack4good.BLL.AccountArea.Login;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace hack4good.Web.Controllers;
 
@@ -16,6 +17,7 @@ public class AccountController : HackController
     }
 
     [HttpPost]
+    [SwaggerOperation("логин")]
     public async Task<IActionResult> Login([FromBody] LoginRequest request)
     {
         var loginResponse = await _mediator.Send(request);
@@ -24,6 +26,7 @@ public class AccountController : HackController
     }
 
     [HttpPost]
+    [SwaggerOperation("смена роли")]
     public async Task<IActionResult> ChangeRole([FromBody] ChangeRoleCommand command)
     {
         await _mediator.Send(command);
@@ -32,6 +35,7 @@ public class AccountController : HackController
     }
 
     [HttpPost]
+    [SwaggerOperation("создание аккаунта")]
     public async Task<IActionResult> CreateAccount([FromBody] CreateAccountCommand command)
     {
         await _mediator.Send(command);
