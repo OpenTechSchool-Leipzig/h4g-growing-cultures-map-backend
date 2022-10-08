@@ -1,6 +1,6 @@
-﻿namespace hack4good.BLL.QuizArea.CreateQuiz;
+﻿namespace hack4good.BLL.QuizArea;
 
-public class CreateQuizStepData
+public class QuizStepDetail
 {
     public string Title { get; set; }
 

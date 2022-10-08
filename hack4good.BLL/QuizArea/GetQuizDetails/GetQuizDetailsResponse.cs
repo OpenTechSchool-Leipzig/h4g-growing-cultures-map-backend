@@ -1,8 +1,6 @@
-﻿using MediatR;
+﻿namespace hack4good.BLL.QuizArea.GetQuizDetails;
 
-namespace hack4good.BLL.QuizArea.CreateQuiz;
-
-public class CreateQuizCommand : IRequest<Guid>
+public class GetQuizDetailsResponse
 {
     public string Title { get; set; }
 
