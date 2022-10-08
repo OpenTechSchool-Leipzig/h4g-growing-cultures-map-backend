@@ -35,8 +35,8 @@ public class QuizController : HackController
         return Ok(response);
     }
 
-    [HttpPost]
-    [SwaggerOperation("получить детали тур")]
+    [HttpGet]
+    [SwaggerOperation("получить детали тура")]
     public async Task<IActionResult> Details([FromBody] Guid quizId)
     {
         var response = await _mediator.Send(new GetQuizDetailsRequest(quizId));
