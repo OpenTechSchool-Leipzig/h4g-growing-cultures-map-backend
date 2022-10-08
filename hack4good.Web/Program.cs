@@ -49,7 +49,17 @@ if (!builder.Environment.IsProduction())
     app.UseSwaggerUI();
 }
 
-app.UseCors(policyBuilder => policyBuilder.AllowAnyOrigin());
+app.UseCors(policyBuilder => 
+    policyBuilder.WithOrigins(
+        "http://localhost",
+        "http://localhost:4200",
+        "https://localhost",
+        "https://localhost:4200",
+        "http://birdegop.ru",
+        "https://birdegop.ru")
+    .AllowAnyMethod()
+    .AllowAnyHeader()
+    .AllowCredentials());
 
 
 app.UseMiddleware<ExceptionCatcherMiddleware>();

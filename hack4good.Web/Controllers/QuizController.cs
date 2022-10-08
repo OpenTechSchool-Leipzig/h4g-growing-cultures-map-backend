@@ -1,5 +1,6 @@
 ﻿using hack4good.BLL.AccountArea.Login;
 using hack4good.BLL.QuizArea.CreateQuiz;
+using hack4good.BLL.QuizArea.DeleteQuiz;
 using hack4good.BLL.QuizArea.GetQuizDetails;
 using hack4good.BLL.QuizArea.GetQuizTours;
 using hack4good.BLL.QuizArea.UpdateQuiz;
@@ -41,6 +42,15 @@ public class QuizController : HackController
     public async Task<IActionResult> Update([FromBody] UpdateQuizCommand command)
     {
         await _mediator.Send(command);
+
+        return Ok();
+    }
+
+    [HttpDelete]
+    [SwaggerOperation("удалить тур")]
+    public async Task<IActionResult> Delete(Guid quizId)
+    {
+        await _mediator.Send(new DeleteQuizCommand(quizId));
 
         return Ok();
     }
