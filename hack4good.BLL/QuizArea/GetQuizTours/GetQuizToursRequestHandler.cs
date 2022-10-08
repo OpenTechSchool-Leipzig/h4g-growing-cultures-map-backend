@@ -18,13 +18,21 @@ public class GetQuizToursRequestHandler : IRequestHandler<GetQuizToursRequest, I
     {
         var quizTours = await _repository.GetAll()
             .AsNoTracking()
+            .Select(q => new
+            {
+                q.Id,
+                q.Title,
+                q.Description,
+                StepsCount = q.Steps.Count
+            })
             .ToListAsync(cancellationToken: cancellationToken);
 
         return quizTours.Select(q => new GetQuizToursResponseItem()
         {
             Id = q.Id,
             Title = q.Title,
-            Description = q.Description
+            Description = q.Description,
+            StepsCount = q.StepsCount
         }).ToList();
     }
 }

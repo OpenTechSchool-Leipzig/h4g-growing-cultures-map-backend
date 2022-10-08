@@ -7,4 +7,6 @@ public class GetQuizToursResponseItem
     public string Title { get; set; }
 
     public string Description { get; set; }
+
+    public int StepsCount { get; set; }
 }
