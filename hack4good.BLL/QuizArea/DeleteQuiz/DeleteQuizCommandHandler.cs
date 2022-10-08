@@ -11,6 +11,12 @@ public class DeleteQuizCommandHandler : IRequestHandler<DeleteQuizCommand, Unit>
     private readonly IRepository<QuizTour> _quizRepository;
     private readonly IRepository<QuizStep> _stepRepository;
 
+    public DeleteQuizCommandHandler(IRepository<QuizTour> quizRepository, IRepository<QuizStep> stepRepository)
+    {
+        _quizRepository = quizRepository;
+        _stepRepository = stepRepository;
+    }
+
     public async Task<Unit> Handle(DeleteQuizCommand request, CancellationToken cancellationToken)
     {
         var quiz = await _quizRepository.GetAll()
