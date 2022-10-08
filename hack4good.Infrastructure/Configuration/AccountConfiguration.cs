@@ -16,14 +16,14 @@ public class AccountConfiguration : IEntityTypeConfiguration<Account>
 
         builder.HasData(new Account()
         {
-            Id = Guid.NewGuid(),
+            Id = new Guid("7d0f8501-a76c-4f1c-90ad-5ef95b93dee1"),
             Login = "admin",
             Password = "admin",
             IsAdmin = true
         });
         builder.HasData(new Account()
         {
-            Id = Guid.NewGuid(),
+            Id = new Guid("c040c031-c485-4925-942a-c7cdbef231fa"),
             Login = "user",
             Password = "user",
             IsAdmin = false

@@ -31,6 +31,11 @@ var app = builder.Build();
 
 await app.Services.MigrateDb();
 
+app.UseForwardedHeaders(new ForwardedHeadersOptions
+{
+    ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+});
+
 if (!builder.Environment.IsProduction())
 {
     app.UseSwagger(options =>
@@ -46,10 +51,6 @@ if (!builder.Environment.IsProduction())
 
 app.UseCors(policyBuilder => policyBuilder.AllowAnyOrigin());
 
-app.UseForwardedHeaders(new ForwardedHeadersOptions
-{
-    ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
-});
 
 app.UseMiddleware<ExceptionCatcherMiddleware>();
 
