@@ -1,4 +1,5 @@
 ﻿using hack4good.BLL.AccountArea.Login;
+using hack4good.BLL.QuizArea.CreateQuiz;
 using hack4good.BLL.QuizArea.GetQuizTours;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -20,6 +21,15 @@ public class QuizController : HackController
     public async Task<IActionResult> List()
     {
         var response = await _mediator.Send(new GetQuizToursRequest());
+
+        return Ok(response);
+    }
+
+    [HttpPost]
+    [SwaggerOperation("создать тур")]
+    public async Task<IActionResult> Create([FromBody] CreateQuizCommand command)
+    {
+        var response = await _mediator.Send(command);
 
         return Ok(response);
     }
