@@ -2,6 +2,7 @@
 using hack4good.BLL.QuizArea.CreateQuiz;
 using hack4good.BLL.QuizArea.GetQuizDetails;
 using hack4good.BLL.QuizArea.GetQuizTours;
+using hack4good.BLL.QuizArea.UpdateQuiz;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
@@ -33,6 +34,15 @@ public class QuizController : HackController
         var response = await _mediator.Send(command);
 
         return Ok(response);
+    }
+
+    [HttpPost]
+    [SwaggerOperation("обновить тур")]
+    public async Task<IActionResult> Update([FromBody] UpdateQuizCommand command)
+    {
+        await _mediator.Send(command);
+
+        return Ok();
     }
 
     [HttpGet]
