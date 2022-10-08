@@ -12,7 +12,7 @@ using hack4good.Infrastructure;
 namespace hack4good.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(HackContext))]
-    [Migration("20221008132304_Quiz")]
+    [Migration("20221008133019_Quiz")]
     partial class Quiz
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -51,14 +51,14 @@ namespace hack4good.Infrastructure.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("7d0f8501-a76c-4f1c-90ad-5ef95b93dee1"),
+                            Id = new Guid("c040c031-c485-4925-942a-c7cdbef231fa"),
                             IsAdmin = true,
                             Login = "admin",
                             Password = "admin"
                         },
                         new
                         {
-                            Id = new Guid("c040c031-c485-4925-942a-c7cdbef231fa"),
+                            Id = new Guid("7d0f8501-a76c-4f1c-90ad-5ef95b93dee1"),
                             IsAdmin = false,
                             Login = "user",
                             Password = "user"

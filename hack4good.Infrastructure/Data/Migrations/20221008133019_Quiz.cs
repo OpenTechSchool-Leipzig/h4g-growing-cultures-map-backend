@@ -44,20 +44,6 @@ namespace hack4good.Infrastructure.Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.UpdateData(
-                table: "Account",
-                keyColumn: "Id",
-                keyValue: new Guid("7d0f8501-a76c-4f1c-90ad-5ef95b93dee1"),
-                columns: new[] { "IsAdmin", "Login", "Password" },
-                values: new object[] { true, "admin", "admin" });
-
-            migrationBuilder.UpdateData(
-                table: "Account",
-                keyColumn: "Id",
-                keyValue: new Guid("c040c031-c485-4925-942a-c7cdbef231fa"),
-                columns: new[] { "IsAdmin", "Login", "Password" },
-                values: new object[] { false, "user", "user" });
-
             migrationBuilder.CreateIndex(
                 name: "IX_QuizStep_QuizId",
                 table: "QuizStep",
@@ -71,20 +57,6 @@ namespace hack4good.Infrastructure.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "QuizTour");
-
-            migrationBuilder.UpdateData(
-                table: "Account",
-                keyColumn: "Id",
-                keyValue: new Guid("7d0f8501-a76c-4f1c-90ad-5ef95b93dee1"),
-                columns: new[] { "IsAdmin", "Login", "Password" },
-                values: new object[] { false, "user", "user" });
-
-            migrationBuilder.UpdateData(
-                table: "Account",
-                keyColumn: "Id",
-                keyValue: new Guid("c040c031-c485-4925-942a-c7cdbef231fa"),
-                columns: new[] { "IsAdmin", "Login", "Password" },
-                values: new object[] { true, "admin", "admin" });
         }
     }
 }
